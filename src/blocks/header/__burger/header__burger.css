@@ -1,0 +1,14 @@
+.header__burger {
+  align-items: center;
+  cursor: pointer;
+  width: 24px;
+  min-height: 20px;
+  position: relative;
+  display: flex;
+}
+
+@media screen and (min-width: 917px) {
+  .header__burger {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+.login__error {
+  color: var(--color-red);
+  font-size: 12px;
+  line-height: 15px;
+  position: absolute;
+  top: 34px;
+  left: 0;
+}

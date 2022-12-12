@@ -1,0 +1,7 @@
+.popup__set {
+  border: none;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  padding: 0;
+}

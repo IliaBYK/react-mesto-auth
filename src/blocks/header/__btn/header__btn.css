@@ -1,0 +1,30 @@
+.header__btn {
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-white);
+  z-index: 100;
+  position: absolute;
+  transition: all .7s linear;
+}
+
+.header__btn::before {
+  content: '';
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-white);
+  z-index: 100;
+  position: absolute;
+  top: 9px;
+  transition: all .5s linear;
+}
+
+.header__btn::after {
+  content: '';
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-white);
+  z-index: 100;
+  position: absolute;
+  bottom: 9px;
+  transition: all .5s linear;
+}

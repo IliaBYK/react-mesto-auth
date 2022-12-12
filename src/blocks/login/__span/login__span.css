@@ -1,0 +1,12 @@
+.login__span {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 17px;
+}
+
+@media screen and (max-width: 767px) {
+  .login__span {
+    margin-top: 20px;
+  }
+}

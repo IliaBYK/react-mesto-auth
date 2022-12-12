@@ -1,0 +1,10 @@
+.login__link {
+  cursor: pointer;
+  transition: var(--transition-button);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.login__link:hover {
+  opacity: var(--opacity-low);
+}

@@ -1,0 +1,5 @@
+@media screen and (max-width: 917px) {
+  .header__profile {
+    display: none;
+  }
+}

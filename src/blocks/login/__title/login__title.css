@@ -1,0 +1,12 @@
+.login__title {
+  color: var(--color-white);
+  text-align: center;
+  margin-top: 22px;
+}
+
+@media screen and (max-width: 767px) {
+  .login__title {
+    font-size: 20px;
+    margin: 0 0 9px;
+  }
+}

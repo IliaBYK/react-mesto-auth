@@ -1,0 +1,9 @@
+.profile__avatar-pen {
+  background: url(../../../images/avatarEditingPen.svg) no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

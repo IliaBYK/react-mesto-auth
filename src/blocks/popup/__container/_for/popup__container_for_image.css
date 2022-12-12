@@ -1,0 +1,7 @@
+.popup__container_for_image {
+  max-width: 75vw;
+  background: none;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}

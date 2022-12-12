@@ -1,0 +1,16 @@
+.footer {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 62px 0 60px; /*к сожалению не могу отследить нижний паддинг, написал по макету, 
+  с помощью perfectPixel не видно нижнюю графицу*/
+  flex-shrink: 0;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+@media screen and (max-width: 915px) {
+  .footer {
+    padding: 46px 19px 35px;
+  }
+}

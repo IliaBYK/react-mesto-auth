@@ -1,0 +1,22 @@
+.login__input {
+  padding: 0 0 2px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--color-white);
+  margin-bottom: 26px;
+  background: none;
+  width: 358px;
+  height: 27px;
+  font-size: 14px;
+  color: var(--color-white);
+}
+
+.login__input::placeholder {
+  color: var(--color-placeh);
+}
+
+@media screen and (max-width: 768px) {
+  .login__input {
+    width: 260px;
+  }
+}

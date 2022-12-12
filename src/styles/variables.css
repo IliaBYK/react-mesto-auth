@@ -1,0 +1,11 @@
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-placeh: rgba(204, 204, 204, 1);
+  --color-grey: #545454;
+  --color-red: rgba(255, 0, 0, 1);
+  --color-bg-pop-up: rgba(0, 0, 0, .5);
+  --color-bg-popup-image: rgba(0, 0, 0, .9);
+  --opacity-low: .6;
+  --transition-button: all .5s ease;
+}

@@ -1,0 +1,9 @@
+.profile__head {
+  max-width: 293px;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__head {
+    margin: 0 auto;
+  }
+}
