@@ -33,7 +33,7 @@
   + компоненты
 
 ### **Github Pages**
-* [Ссылка на Github Pages](https://iliabyk.github.io/mesto-react/)
+* [Ссылка на Github Pages](https://iliabyk.github.io/mesto-react-auth/)
 
 ### **Автор**
 __Быков Илья__
