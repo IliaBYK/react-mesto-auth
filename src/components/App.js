@@ -32,9 +32,6 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isSucces, setSuccess] = useState(false);
   const [email, setEmail] = useState('');
-/*   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState(''); */
 
   const history = useHistory();
 
@@ -56,10 +53,8 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      // проверяем токен пользователя
       auth.checkToken(token).then((res) => {
         if (res) {
-          // если есть цель, добавляем её в стейт
           setLoggedIn(true);
           history.push("/");
           setEmail(res.data.email);
@@ -67,45 +62,6 @@ function App() {
       });
     }
   }, [history, loggedIn])
-
-  /* const handleSubmitReg = useCallback((values) => {
-    if (password === confirmPassword) {
-      auth.register(values).then((res) => {
-        if (res.statusCode !== 400) {
-          history.push('/sign-in');
-        }
-      }).then(() => handleInfoToolTipClick());
-    }
-  }, [password, confirmPassword, history]) */
-
-  /* const handleSignUp = useCallback((values) => {
-    return authApi
-      .register(values)
-      .then(
-        ({ data }) => {
-          setSuccessSignUp(true);
-          history.push("/sign-in")
-        },
-        (err) => {
-          setSuccessSignUp(false);
-          console.log(err.message);
-        }
-      )
-      .then(() => setInfoPopupOpen(true));
-  }, []); */
-
-  /* const handleSubmitReg = useCallback((values) => {
-    if (values.password === values.confirmPassword) {
-      auth.register(values).then(({res}) => {
-        if (res.statusCode !== 400) {
-          setSuccess(true);
-          history.push('/login')
-        } else {
-          setSuccess(false);
-        }
-      }).then(() => setIsInfoTooltipOpen(true));
-    }
-  }, []); */
 
   const handleSubmitReg = (values) => {
     if (values.password === values.confirmPassword) {
@@ -143,44 +99,6 @@ function App() {
     localStorage.removeItem('token');
     history.push('/sign-in');
   }
-    
-
-  /* useEffect(() => {
-    const token = localStorage.getItem('jwt');
-    if (token) {
-      duckAuth.getContent(token).then((res) => {
-        if (res) {
-          let userData = {
-            username: res.username,
-            email: res.email,
-          };
-          handleLogin(userData)
-          history.push('/ducks');
-        }
-      });
-    }
-  }, []) */
-  /* const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!data.username || !data.password) {
-      return;
-    }
-    duckAuth.authorize(data.username, data.password)
-      .then((res) => {
-        if (res.jwt) {
-          setData({ username: '', password: '' })
-          localStorage.setItem('jwt', res.jwt)
-          const userData = {
-            username: res.user.username,
-            email: res.user.email
-          }
-          handleLogin(userData);
-          history.push('/ducks');
-        }
-      })
-      .catch(err => console.log(err));
-  } */
-
   
   function handleCardClick(card) {
     setSelectedCard(card);

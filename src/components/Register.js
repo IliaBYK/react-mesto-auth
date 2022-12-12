@@ -14,26 +14,6 @@ function Register(props) {
     return props.onSubmit(values);
   }
 
-  /* const handleSubmit = (e) => {
-    e.preventDefault();
-    if (values.password === values.confirmPassword) {
-      auth.register(values.password, values.email).then((res) => {
-        if (res.statusCode !== 400) {
-          setValues({
-            password: '',
-            email: ''
-          });
-          history.push('/login')
-        } /* else {
-          setValues({
-            password: '',
-            email: ''
-          });
-        }
-      }).then(() => props.infoPopup());
-    }
-  } */
-
   const spanErrorClassName = (error) => "login__error" + (error ? " login__error_active" : "");
 
   const inputErrorClassName = (error) => "login__input" + (error ? " login__input_type_error" : "");

@@ -4,8 +4,6 @@ import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 const EditAvatarPopup = ({ isLoading, isOpen, onClose, onSubmit }) => {
 
-  /* const avatarRef = React.useRef(); */
-
   const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation({
     avatar: ''
   })
@@ -37,7 +35,6 @@ const EditAvatarPopup = ({ isLoading, isOpen, onClose, onSubmit }) => {
       <fieldset className="popup__set">
         <label className="popup__field popup__field_place_popup-update">
           <input 
-            /* ref={avatarRef}  */
             value={values.avatar || ''} 
             onChange={handleChange} 
             type="url" 
