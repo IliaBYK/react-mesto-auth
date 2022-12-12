@@ -72,6 +72,7 @@
 @import url(./blocks/popup/__info-image/_type/popup__info-image_type_fail.css);
 @import url(./blocks/popup/__info-image/_type/popup__info-image_type_success.css);
 @import url(./blocks/popup/__info-title/popup__info-title.css);
+@import url(./blocks/popup/__error/popup__error.css);
 
 @import url(./blocks/popup/__form/popup__form.css);
 @import url(./blocks/popup/__set/popup__set.css);

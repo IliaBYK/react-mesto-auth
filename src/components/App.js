@@ -10,12 +10,12 @@ import EditProfilePopup from './popups/EditProfilePopup';
 import EditAvatarPopup from './popups/EditAvatarPopup';
 import ImagePopup from './popups/ImagePopup';
 import InfoTooltip from './popups/InfoTooltip';
-import CurrentUserContext from './context/CurrentUserContext';
+import CurrentUserContext from '../context/CurrentUserContext';
 import api from '../utils/Api';
 import Login from './Login';
 import Register from './Register';
 import ProtectedRoute from './ProtectedRoute';
-import * as auth from './Auth';
+import * as auth from '../utils/Auth';
 
 function App() {
 
@@ -32,23 +32,28 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isSucces, setSuccess] = useState(false);
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
   const history = useHistory();
 
   useEffect(() => {
-    api.getServerUserInfo()
-      .then((userData) => {
-        setCurrentUser(userData)
-      })
-      .catch((err) => console.log(err))
-  }, [])
+    if(loggedIn) {
+      api.getServerUserInfo()
+        .then((userData) => {
+          setCurrentUser(userData)
+        })
+        .catch((err) => console.log(err))
+    }
+  }, [loggedIn])
 
   useEffect(() => {
-    api.getInitialCards()
-      .then((cards) => {
-        setCards(cards);
-      }).catch((err) => console.log(err))
-  }, [])
+    if (loggedIn) {
+      api.getInitialCards()
+        .then((cards) => {
+          setCards(cards);
+        }).catch((err) => console.log(err))
+    }
+  }, [loggedIn])
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -59,7 +64,7 @@ function App() {
           history.push("/");
           setEmail(res.data.email);
         }
-      });
+      }).catch(err => console.log(err));
     }
   }, [history, loggedIn])
 
@@ -73,9 +78,13 @@ function App() {
           } else {
             setSuccess(false);
           }
-        }).finally(() => setIsInfoTooltipOpen(true));
+        }).catch(err => setError(err))
+        .finally(() => setIsInfoTooltipOpen(true));
     }
   }
+
+  /*смог только так показать ошибку, к сожалению не понимаю как показать message, 
+  который приходит в ответеб все перепробовал, поискал в интернете*/
 
   const handleSubmitLog = (values) => {
     if (!values.email || !values.password) {
@@ -244,7 +253,11 @@ function App() {
 
         <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
 
-        <InfoTooltip isOpen={isInfoTooltipOpen} onClose={closeAllPopups} success={isSucces} />
+        <InfoTooltip 
+          isOpen={isInfoTooltipOpen} 
+          onClose={closeAllPopups} 
+          success={isSucces} 
+          error={error}/>
 
         <Footer />
 

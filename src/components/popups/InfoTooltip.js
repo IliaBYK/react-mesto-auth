@@ -1,6 +1,6 @@
 import Popup from "./Popup";
 
-function InfoTooltip({ success, isOpen, onClose }) {
+function InfoTooltip({ success, isOpen, onClose, error }) {
   return (
     <Popup 
       onClose={onClose} 
@@ -21,6 +21,7 @@ function InfoTooltip({ success, isOpen, onClose }) {
             ? "Вы успешно зарегистрировались!"
             : "Что-то пошло не так! Попробуйте ещё раз."}
         </h2>
+        <span className="popup__error">{error}</span>
         <button className="popup__close-button button"
           type="reset"
           aria-label="Кнопка закрытия всплывающего окна" />
