@@ -73,7 +73,8 @@ function App() {
       auth.register(values.password, values.email)
         .then((res) => {
           if (res.statusCode !== 400) {
-            setSuccess(true)
+            setSuccess(true);
+            setError('');
             history.push('/sign-in');
           } else {
             setSuccess(false);
@@ -94,10 +95,13 @@ function App() {
           auth.checkToken(res.token);
           setLoggedIn(true);
           history.push('/');
+          setError('');
         }
       })
-      .catch(err => setError(err.message))
-      .finally(() => setIsInfoTooltipOpen(true));
+      .catch((err) => {
+        setError(err.message);
+        setIsInfoTooltipOpen(true);
+      })
     }
 
   const handleSignOut = () => {
