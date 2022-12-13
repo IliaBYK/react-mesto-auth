@@ -78,13 +78,10 @@ function App() {
           } else {
             setSuccess(false);
           }
-        }).catch(err => setError(err))
+        }).catch(err => setError(err.message || err.error))
         .finally(() => setIsInfoTooltipOpen(true));
     }
   }
-
-  /*смог только так показать ошибку, к сожалению не понимаю как показать message, 
-  который приходит в ответеб все перепробовал, поискал в интернете*/
 
   const handleSubmitLog = (values) => {
     if (!values.email || !values.password) {
@@ -99,7 +96,8 @@ function App() {
           history.push('/');
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => setError(err.message))
+      .finally(() => setIsInfoTooltipOpen(true));
     }
 
   const handleSignOut = () => {
