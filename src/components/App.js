@@ -79,8 +79,11 @@ function App() {
           } else {
             setSuccess(false);
           }
-        }).catch(err => setError(err.message || err.error))
+        }).catch(err => setError(err.error || err.message))
         .finally(() => setIsInfoTooltipOpen(true));
+    } else {
+      setIsInfoTooltipOpen(true);
+      setError('Пароли не совпадают');
     }
   }
 
